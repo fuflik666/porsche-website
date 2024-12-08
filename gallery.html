@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porsche - Галерея</title>
+    <link rel="stylesheet" href="css/style.css"> 
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Головна</a></li>
+                <li><a href="catalog.html">Каталог моделей</a></li>
+                <li><a href="gallery.html">Галерея</a></li>
+                <li><a href="about.html">Про автора</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Галерея Porsche</h1>
+        <section class="gallery">
+            <div class="gallery-item">
+                <img src="images/porsche_911.jpg" alt="Porsche 911" onclick="openModal(this)">
+            </div>
+            <div class="gallery-item">
+                <img src="images/porsche_cayenne.jpg" alt="Porsche Cayenne" onclick="openModal(this)">
+            </div>
+            <div class="gallery-item">
+                <img src="images/porsche_taycan.jpg" alt="Porsche Taycan" onclick="openModal(this)">
+            </div>
+            <div class="gallery-item">
+                <img src="images/porsche_panamera.jpg" alt="Porsche Panamera" onclick="openModal(this)">
+            </div>
+            <div class="gallery-item">
+                <img src="images/porsche_718_cayman.jpg" alt="Porsche 718 Cayman" onclick="openModal(this)">
+            </div>
+            <div class="gallery-item">
+                <img src="images/porsche_macan.jpg" alt="Porsche Macan" onclick="openModal(this)">
+            </div>
+            <div class="gallery-item">
+                <img src="images/porsche_918_spyder.jpg" alt="Porsche 918 Spyder" onclick="openModal(this)">
+            </div>
+            <div class="gallery-item">
+                <img src="images/porsche_356.jpg" alt="Porsche 356" onclick="openModal(this)">
+            </div>
+        </section>
+    </main>
+
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span> 
+        <img class="modal-content" id="img01">
+        <div id="caption"></div>
+    </div>
+
+    <footer>
+        <p>© Котляренко Сергій</p>
+    </footer>
+
+    <script>
+        function openModal(img) {
+            var modal = document.getElementById("myModal");
+            var modalImg = document.getElementById("img01");
+            var captionText = document.getElementById("caption");
+            modal.style.display = "block";
+            modalImg.src = img.src;
+            captionText.innerHTML = img.alt;
+        }
+
+        function closeModal() {
+            var modal = document.getElementById("myModal");
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            var modal = document.getElementById("myModal");
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>
